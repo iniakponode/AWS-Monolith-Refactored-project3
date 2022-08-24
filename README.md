@@ -1,3 +1,4 @@
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/iniakponode/AWS-Monolith-Refactored-project3/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/iniakponode/AWS-Monolith-Refactored-project3/tree/main)
 # Udagram Image Filtering Application
 
 Udagram is a simple cloud application developed alongside the Udacity Cloud Engineering Nanodegree. It allows users to register and log into a web client, post photos to the feed, and process photos using an image filtering microservice.
