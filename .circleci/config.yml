@@ -21,22 +21,22 @@ jobs:
             sudo apt install nodejs
             echo "--------- The images is Building ------------"
             docker build -t udagram-api-feed ./udagram-api-feed
-            docker tag udagram-api-feed docker.io/iniakponode/udagram-api-feed:v8
+            docker tag udagram-api-feed docker.io/iniakponode/udagram-api-feed:v20
             docker build -t udagram-api-user ./udagram-api-user
-            docker tag udagram-api-user docker.io/iniakponode/udagram-api-user:v8
+            docker tag udagram-api-user docker.io/iniakponode/udagram-api-user:v20
             
             docker build -t udagram-frontend ./udagram-frontend
-            docker tag udagram-frontend docker.io/iniakponode/udagram-frontend:v10
-            docker build -t reverseproxy ./reverseproxy
-            docker tag reverseproxy docker.io/iniakponode/reverseproxy:v10
+            docker tag udagram-frontend docker.io/iniakponode/udagram-frontend:v20
+            docker build -t reverseproxy ./udagram-reverseproxy
+            docker tag reverseproxy docker.io/iniakponode/reverseproxy:v20
             echo "-------- All images succesfully built----------"
             echo " ------- login in to hub--------"
             docker login -u iniakponode -p $DOCKERPASS
             echo "-------------- Pushing images to dockerhub-------"
-            docker push docker.io/iniakponode/udagram-api-feed:v8
-            docker push docker.io/iniakponode/udagram-api-user:v8
-            docker push docker.io/iniakponode/udagram-frontend:v8
-            docker push docker.io/iniakponode/reverseproxy:v8
+            docker push docker.io/iniakponode/udagram-api-feed:v20
+            docker push docker.io/iniakponode/udagram-api-user:v20
+            docker push docker.io/iniakponode/udagram-frontend:v20
+            docker push docker.io/iniakponode/reverseproxy:v20
 workflows:
   default:
     jobs:

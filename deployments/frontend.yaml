@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: docker.io/iniakponode/udagram-frontend:v10
+        image: docker.io/iniakponode/udagram-frontend:v20
         ports: 
         - containerPort: 80
         resources:

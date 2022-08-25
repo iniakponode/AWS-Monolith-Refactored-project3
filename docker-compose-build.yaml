@@ -2,20 +2,20 @@ version: "3"
 services:
   reverseproxy:
     build:
-      context: ./reverseproxy
-    image: docker.io/iniakponode/reverseproxy:v10
+      context: ./udagram-reverseproxy
+    image: docker.io/iniakponode/reverseproxy:v20
   backend_user:
     build:
       context: ./udagram-api-user
-    image: docker.io/iniakponode/udagram-api-user:v10
+    image: docker.io/iniakponode/udagram-api-user:v20
   backend_feed:
     build:
       context: ./udagram-api-feed
-    image: docker.io/iniakponode/udagram-api-feed:v10
+    image: docker.io/iniakponode/udagram-api-feed:v20
   frontend:
     build:
       context: ./udagram-frontend
-    image: docker.io/iniakponode/udagram-frontend:v10
+    image: docker.io/iniakponode/udagram-frontend:v20
 
 # Make sure the Docker services are running in your local machine
 # Remove unused and dangling images
