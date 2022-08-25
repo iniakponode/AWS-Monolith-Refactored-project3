@@ -13,15 +13,15 @@ spec:
         run: reverseproxy
     spec:
       containers:
-        - name: reverseproxy
-          image: docker.io/iniakponode/reverseproxy:v21
-          ports:
-            - containerPort: 80
-          resources:
-            limits:
-              cpu: 10000m
-            requests:
-              cpu: 5000m
+      - name: reverseproxy
+        image: docker.io/iniakponode/reverseproxy:21
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: 500m
+          requests:
+            cpu: 200m
 
 ---
 apiVersion: v1
@@ -32,8 +32,8 @@ metadata:
   name: reverseproxy
 spec:
   ports:
-    - name: "reverseproxy"
-      port: 8080
-      targetPort: 8080
+  - name: "8080"
+    port: 8080
+    targetPort: 8080
   selector:
     service: reverseproxy

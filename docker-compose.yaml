@@ -1,7 +1,15 @@
-version: "3"
+version: "2.2.3"
 services:
-  backenduser:
-    image: iniakponode/udagram-api-user:v21
+  reverseproxy:
+      image: reverseproxy
+      ports:
+          - 8080:8080
+      restart: always
+      depends_on:
+        - backenduser
+        - backendfeed
+  backend-user:
+    image: udagram-api-user
     environment:
       POSTGRES_USERNAME: $POSTGRES_USERNAME
       POSTGRES_PASSWORD: $POSTGRES_PASSWORD 
@@ -12,11 +20,8 @@ services:
       AWS_BUCKET: $AWS_BUCKET
       JWT_SECRET: $JWT_SECRET
       URL: "http://localhost:8100"
-    # networks:
-    #   - example-net
-
-  backendfeed:
-    image: iniakponode/udagram-api-feed:v21
+  backend-feed:
+    image: udagram-api-feed
     volumes:
       - $HOME/.aws:/root/.aws
     environment:
@@ -29,27 +34,7 @@ services:
       AWS_BUCKET: $AWS_BUCKET
       JWT_SECRET: $JWT_SECRET
       URL: "http://localhost:8100"
-    # networks:
-    #   - example-net
-
-  reverseproxy:
-    image: iniakponode/reverseproxy:v21
-    ports:
-      - 8080:8080
-    restart: always
-    depends_on:
-      - backenduser
-      - backendfeed
-    # networks:
-    #   - example-net
-          
   frontend:
-    image: iniakponode/frontend:v21
+    image: udagram-frontend:local
     ports:
       - "8100:80"
-    # networks:
-    #   - example-net
-
-# networks:
-#   example-net:
-#     external: true

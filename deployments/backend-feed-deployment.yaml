@@ -14,14 +14,14 @@ spec:
     spec:
       containers:
       - name: backendfeed
-        image: iniakponode/udagram-api-feed:v21
+        image: docker.io/iniakponode/udagram-api-feed:v21
         ports:
         - containerPort: 80
         resources:
           limits:
-            cpu: 1000m
-          requests:
             cpu: 500m
+          requests:
+            cpu: 200m
 
 ---
 apiVersion: v1

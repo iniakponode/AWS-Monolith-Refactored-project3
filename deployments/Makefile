@@ -22,7 +22,7 @@ delete_cluster:
 
 set_context:
 	eksctl utils write-kubeconfig \
-	--cluster=$(my-cluster) \
+	--cluster=udagramCluster \
 	--set-kubeconfig-context=true
 
 create_iamidentitymapping:
@@ -72,7 +72,7 @@ change_deployment:
 
 pods:
 	kubectl get pods
-	
+
 delete_pods:
 	kubectl delete pods --force podname
 deploys:
