@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: backenduser
-        image: docker.io/iniakponode/udagram-api-user:v20
+        image: docker.io/iniakponode/udagram-api-user:v21
         ports:
         - containerPort: 80
         resources:

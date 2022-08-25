@@ -1,5 +1,5 @@
-my-cluster = udagram-project-03-cluster
-cluster-region = us-east-1
+my-cluster = udagramCluster
+cluster-region = us-east-2
 arn=arn:aws:iam::744555430390:user/com.etbf.project3root
 username=project3root
 nodename=linux-workers
@@ -72,7 +72,8 @@ change_deployment:
 
 pods:
 	kubectl get pods
-delete_pods
+	
+delete_pods:
 	kubectl delete pods --force podname
 deploys:
 	kubectl get deployments

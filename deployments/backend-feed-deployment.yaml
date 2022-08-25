@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: backendfeed
-        image: docker.io/iniakponode/udagram-api-feed:v10
+        image: iniakponode/udagram-api-feed:v21
         ports:
         - containerPort: 80
         resources:
