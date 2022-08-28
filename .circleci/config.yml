@@ -26,17 +26,17 @@ jobs:
             docker tag udagram-api-user iniakponode/udagram-api-user:v21
             
             docker build -t udagram-frontend ./udagram-frontend
-            docker tag udagram-frontend iniakponode/udagram-frontend:v21
+            docker tag udagram-frontend iniakponode/udagram-frontend:v25
             docker build -t reverseproxy ./udagram-reverseproxy
-            docker tag reverseproxy iniakponode/reverseproxy:v21
+            docker tag reverseproxy iniakponode/reverseproxy:v25
             echo "-------- All images succesfully built----------"
             echo " ------- login in to hub--------"
             docker login -u iniakponode -p $DOCKERPASS
             echo "-------------- Pushing images to dockerhub-------"
-            docker push iniakponode/udagram-api-feed:v21
-            docker push iniakponode/udagram-api-user:v21
-            docker push iniakponode/udagram-frontend:v21
-            docker push iniakponode/reverseproxy:v21
+            docker push iniakponode/udagram-api-feed:v25
+            docker push iniakponode/udagram-api-user:v25
+            docker push iniakponode/udagram-frontend:v25
+            docker push iniakponode/reverseproxy:v25
 workflows:
   default:
     jobs:
